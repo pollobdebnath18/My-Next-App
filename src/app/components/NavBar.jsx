@@ -1,17 +1,35 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 const NavBar = () => {
+  const pathName = usePathname();
+  console.log("pathname in the navbar : ", pathName);
   const links = (
     <>
       <li>
+        <Link className={pathName === '/' ? 'text-blue-800':''} href="/">Home</Link>
+      </li>
+
+      <li>
         <Link href="/about">About</Link>
       </li>
-      <li><Link href="/contact">Contact</Link></li>
-      <li><a href="/about/developers">Developers</a></li>
-      <li><Link href="/blogs">Blogs</Link></li>
-      <li><Link href='/dashboard'>DashBoard</Link></li>
-      <li><Link href='/users'>Users</Link></li>
+      <li>
+        <Link href="/contact">Contact</Link>
+      </li>
+      <li>
+        <a href="/about/developers">Developers</a>
+      </li>
+      <li>
+        <Link className={pathName === '/blogs' ? 'text-blue-800': ''} href="/blogs">Blogs</Link>
+      </li>
+      <li>
+        <Link href="/dashboard">DashBoard</Link>
+      </li>
+      <li>
+        <Link href="/users">Users</Link>
+      </li>
     </>
   );
   return (
@@ -42,12 +60,12 @@ const NavBar = () => {
             {links}
           </ul>
         </div>
-        <Link href="/" className="btn btn-ghost text-xl">daisyUI</Link>
+        <Link href="/" className="btn btn-ghost text-xl">
+          daisyUI
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-            {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
         <a className="btn">Button</a>

@@ -1,6 +1,19 @@
 import Link from "next/link";
 import React from "react";
 
+// google font
+import { Roboto ,Poppins} from "next/font/google";
+
+const roboto = Roboto({
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const poppins =Poppins({
+  weight:'600',
+  subsets:['latin'],
+})
+
 const BlogPages = () => {
   const blogs = [
     {
@@ -56,7 +69,7 @@ const BlogPages = () => {
   ];
 
   return (
-    <div>
+    <div className={poppins.className}>
       <h2 className="text-4xl font-bold text-blue-500">This is Blog Page</h2>
       {blogs.map((blog) => (
         <div key={blog.id}>
