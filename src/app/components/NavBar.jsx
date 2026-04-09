@@ -10,6 +10,8 @@ const NavBar = () => {
       <li><Link href="/contact">Contact</Link></li>
       <li><a href="/about/developers">Developers</a></li>
       <li><Link href="/blogs">Blogs</Link></li>
+      <li><Link href='/dashboard'>DashBoard</Link></li>
+      <li><Link href='/users'>Users</Link></li>
     </>
   );
   return (
